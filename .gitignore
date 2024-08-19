@@ -1,0 +1,7 @@
+data
+database_volume
+
+data.tar.gz*
+
+.env
+.vscode

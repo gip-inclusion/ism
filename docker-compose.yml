@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    ism-database:
+        build :
+          context: .
+          args:
+            ENCRYPTION_KEY: $ISM_ENCRYPTION_KEY 
+        environment :
+          NEO4J_AUTH: "${NEO4J_USERNAME:-neo4j}/${NEO4J_PASSWORD:-password}"
+        volumes:
+            - './database_volume:/data'
+        ports:
+            - 7474:7474
+            - 7687:7687
